@@ -8,7 +8,7 @@ class HornedBeast extends React.Component {
     super(props);
     this.state = {
       favorites: 0
-    }
+    };
   }
 
   favorite = () => {
@@ -17,10 +17,14 @@ class HornedBeast extends React.Component {
     });
   }
 
+  selectHornedBeast = () => {
+    this.props.selectBeast({title: this.props.title, image_URL: this.props.imageURL, description: this.props.description});
+  }
+
   render() {
     return (
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={this.props.imgURL} alt="{this.props.title}"/>
+        <Card.Img variant="top" src={this.props.imageURL} alt="{this.props.title}" onClick={this.selectHornedBeast}/>
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>

@@ -1,0 +1,4 @@
+        <img src={this.props.imgURL} alt='minotaur'></img>
+        <p>{this.props.imgURL}</p>
+        <img src={require(this.props.imgURLString)} alt='also minotaur'></img>
+        <p>{this.props.imgURLString}</p>
