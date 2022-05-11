@@ -1,0 +1,38 @@
+.card {
+  background-color:cornflowerblue;
+  width: 25vw;
+  max-width: 300px;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card-title.h5 {
+  margin: 0 0 10px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: beige;
+}
+
+.card-body > p:last-of-type {
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: gray;
+  color: white;
+  width: max-content;
+  margin: 10px auto 0;
+  padding: 3px;
+}
+
+.card-body > p:last-of-type:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.card > img {
+  border: 1px solid black;
+  border-radius: 4px;
+}

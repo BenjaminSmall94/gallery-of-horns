@@ -1,5 +1,11 @@
+h1, h2 {
+  width: 95vw;
+  margin: 10px auto
+}
+
 h1 {
   background-color: lightsteelblue;
+  text-align: center;
 }
 
 h2 {
