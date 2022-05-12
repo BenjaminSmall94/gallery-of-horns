@@ -21,7 +21,8 @@ class App extends React.Component {
     this.setState({
       isModalDisplaying: true,
       beastName: beast.title,
-      beastURL: beast.image_URL,
+      beastURL: beast.image_url,
+      beastHorns: beast.horns,
       beastDescription: beast.description
     });
   };
@@ -44,7 +45,8 @@ class App extends React.Component {
         >
           <Modal.Title>{this.state.beastName}</Modal.Title>
           <img src={this.state.beastURL} alt={this.state.beastName}></img>
-          <p>{this.state.beastDescription}</p>          
+          <p>{this.state.beastDescription}</p>
+          <p>Number of Horns: {this.state.beastHorns}</p>
         </Modal>
       </>
     );
