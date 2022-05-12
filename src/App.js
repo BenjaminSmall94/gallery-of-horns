@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
+import SelectedBeast from './SelectedBeast.js';
 import beastData from './data.json';
-import Modal from 'react-bootstrap/Modal';
 import './App.css';
 
 class App extends React.Component {
@@ -11,43 +11,41 @@ class App extends React.Component {
     super(props);
     this.state = { 
       isModalDisplaying: false,
-      beastName: '',
-      beastURL: '',
-      beastDescription: ''
+      beast: ''
     }
   }
 
   selectBeast = (beast) => {
     this.setState({
       isModalDisplaying: true,
-      beastName: beast.title,
-      beastURL: beast.image_url,
-      beastHorns: beast.horns,
-      beastDescription: beast.description
+      beast: beast
     });
   };
 
   unselectBeast = () => {
     this.setState({
-      isModalDisplaying: false
+      isModalDisplaying: false,
+      beast: ''
     });
   }
 
   render() {
+    let selectedBeast = '';
+    if(this.state.beast !== '') {
+      selectedBeast = (
+        <SelectedBeast 
+          beast={this.state.beast} 
+          showing={this.state.isModalDisplaying}
+          close={this.unselectBeast} 
+        />
+      );
+    }
     return (
       <>
         <Header />
         <Main beastData={beastData} selectBeast={this.selectBeast}/>
         <Footer />
-        <Modal
-          show={this.state.isModalDisplaying}
-          onHide={this.unselectBeast}
-        >
-          <Modal.Title>{this.state.beastName}</Modal.Title>
-          <img src={this.state.beastURL} alt={this.state.beastName}></img>
-          <p>{this.state.beastDescription}</p>
-          <p>Number of Horns: {this.state.beastHorns}</p>
-        </Modal>
+        {selectedBeast}
       </>
     );
   }
