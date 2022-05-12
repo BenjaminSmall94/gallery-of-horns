@@ -7,9 +7,7 @@ class Main extends React.Component {
     let beastArray = this.props.beastData.map(beast => {
       return (
         <HornedBeast
-          title={beast.title}
-          imageURL={beast.image_url}
-          description={beast.description}
+          beast={beast}
           key={beast._id}
           selectBeast={this.props.selectBeast}
         />)

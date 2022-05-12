@@ -18,16 +18,16 @@ class HornedBeast extends React.Component {
   }
 
   selectHornedBeast = () => {
-    this.props.selectBeast({title: this.props.title, image_URL: this.props.imageURL, description: this.props.description});
+    this.props.selectBeast(this.props.beast);
   }
 
   render() {
     return (
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={this.props.imageURL} alt="{this.props.title}" onClick={this.selectHornedBeast}/>
+        <Card.Img variant="top" src={this.props.beast.image_url} alt={this.props.beast.title} onClick={this.selectHornedBeast}/>
         <Card.Body>
-          <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Title>{this.props.beast.title}</Card.Title>
+          <Card.Text>{this.props.beast.description}</Card.Text>
           <p onClick={this.favorite}>❤️ {this.state.favorites} favorites</p>
         </Card.Body>
       </Card>
