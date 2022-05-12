@@ -27,7 +27,15 @@ This website implements React to display a gallery of various creatures with hor
 ### Lab 03
 
 1. Feature Task #1: Display a Modal
-   - Estimate Time: 1.5 hr
+   - Estimated Time: 1.5 hr
    - Start Time: 1:55pm
    - Finish Time: 3:00pm
    - Actual Time: 1:05 hr
+
+### Lab 04
+
+1. Feature Task #1: Filter by Numbers of Horns
+   - Estimated Time: 1 hr
+   - Start Time: 3:55pm
+   - End Time: 3:35pm
+   - Actual Time: 0:40 hr
